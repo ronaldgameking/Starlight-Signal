@@ -44,7 +44,6 @@ public class RockGenerator : MonoBehaviour
         float randomZ = Random.Range(transform.position.z , SpawnArea.z);
 
         randomPos = new Vector3(randomX, randomY, randomZ);
-        print(randomPos);
     }
     
     IEnumerator SpawnObjects()
