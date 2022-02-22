@@ -123,30 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &476333259 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1933757450243008807, guid: 970905a8ffea1184fa5def667b8c0a81, type: 3}
-  m_PrefabInstance: {fileID: 1591881687913455833}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &476333260
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476333259}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 33a73914b6b2a5740bfed85d33e671e9, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &476333263 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1269388971730776989, guid: 970905a8ffea1184fa5def667b8c0a81, type: 3}
@@ -576,9 +552,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship
       objectReference: {fileID: 0}
-    - target: {fileID: 8753416501770755312, guid: 970905a8ffea1184fa5def667b8c0a81, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 069208138e2926e49a01bce133daafd3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 970905a8ffea1184fa5def667b8c0a81, type: 3}
