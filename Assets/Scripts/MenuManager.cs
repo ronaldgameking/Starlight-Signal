@@ -5,8 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-   public void LoadScene(string scenename )
-   {
+    public static MenuManager instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    public void LoadSceneByName(string scenename)
+    {
        SceneManager.LoadScene(scenename);
-   }
+    }
+    public void LoadSceneByIndex(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
 }
