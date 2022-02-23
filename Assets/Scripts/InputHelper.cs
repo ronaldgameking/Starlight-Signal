@@ -9,12 +9,13 @@ using UnityEngine.InputSystem;
 public class InputHelper : MonoBehaviour
 {
     public bool VerboseLogging;
-    public Vector2 MoveDelta;
+    public Vector2 MoveDelta = new Vector2();
     public Vector2 LookDelta;
 
     private void Awake()
     {
-        Logger.Level = Logger.DebugLevel.Verbose;
+        if (VerboseLogging)
+            Logger.Level = Logger.DebugLevel.Verbose;
         HideCursor();
 #if !ENABLE_INPUT_SYSTEM
         Debug.LogError("The unity input system package is not installed!");
@@ -25,6 +26,8 @@ public class InputHelper : MonoBehaviour
     public void OnMove(InputAction.CallbackContext value)
     {
         MoveDelta = value.ReadValue<Vector2>();
+        if (MoveDelta == null)
+            Logger.LogWarning("Help.");
     }
 #endif
 
