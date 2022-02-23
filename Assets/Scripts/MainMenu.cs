@@ -13,6 +13,6 @@ public class MainMenu : MonoBehaviour
 
     public void PlayButton()
     {
-        SceneManager.LoadScene("Pausemenu");
+        SceneManager.LoadScene("Game");
     }
 }
