@@ -6,6 +6,7 @@ public class ObjectiveManager : MonoBehaviour
 {
     [SerializeField]private GameObject Objective;
     [SerializeField]private Transform Player;
+    [SerializeField]private Transform[] spawnOptions;
 
     [SerializeField]private float distanceBetweenObjective;
     [SerializeField]private float maxDistance = 10f;
@@ -23,14 +24,25 @@ public class ObjectiveManager : MonoBehaviour
             ReachedTarget();
     }
 
+    /// <summary>
+    /// Spawn the objective
+    /// </summary>
     private void SpawnObjective()
     {
         Instantiate(Objective);
         GiveRandomPosition();
     } 
 
+    /// <summary>
+    /// Give it a random position
+    /// </summary>
     private void GiveRandomPosition()
     {
+        int randomSpawnOption = Random.Range(0, spawnOptions.Length);
+
+        Vector3 pos = new Vector3(spawnOptions[randomSpawnOption].transform.position.x, transform.position.y, spawnOptions[randomSpawnOption].transform.position.z);
+
+        Objective.transform.position = pos;
         // create a few places where the objective can be spawned
         // let is choose between those position 
     }
@@ -48,9 +60,14 @@ public class ObjectiveManager : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.green;
        
         if(Objective != null && Player !=null)
         Gizmos.DrawLine(Objective.transform.position , Player.transform.position);
+
+        
+        Gizmos.color = Color.red;
+        if (Objective != null && Player != null)
+            Gizmos.DrawWireSphere(Objective.transform.position, maxDistance);
     }
 }
