@@ -40,7 +40,7 @@ public class ObjectiveManager : MonoBehaviour
     {
         int randomSpawnOption = Random.Range(0, spawnOptions.Length);
 
-        Vector3 pos = new Vector3(spawnOptions[randomSpawnOption].transform.position.x, transform.position.y, spawnOptions[randomSpawnOption].transform.position.z);
+        Vector3 pos = new Vector3(spawnOptions[randomSpawnOption].transform.position.x, spawnOptions[randomSpawnOption].transform.position.y, spawnOptions[randomSpawnOption].transform.position.z);
 
         Objective.transform.position = pos;
         // create a few places where the objective can be spawned
