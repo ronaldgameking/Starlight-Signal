@@ -157,7 +157,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9ac1a32d1a83a4f4abcee9d902dd91b9, type: 2}
     - target: {fileID: 919132149155446097, guid: 906f047f2f1832c4587c4703d35425ef, type: 3}
       propertyPath: m_Name
-      value: Ship
+      value: Ship Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8029106800918022278, guid: 906f047f2f1832c4587c4703d35425ef, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -287,19 +287,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8547471881871753710, guid: 906f047f2f1832c4587c4703d35425ef, type: 3}
---- !u!114 &476333260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1933757450243008807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cdebe68e6bdf2441a555da7c3949a88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb_vl: 50
 --- !u!95 &525285837671479505
 Animator:
   serializedVersion: 3
@@ -319,6 +306,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &476333260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933757450243008807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cdebe68e6bdf2441a555da7c3949a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 120
+  Helper: {fileID: 0}
+  TurnTime: 0.1
+  OverrideRotationOffset: 1
+  Axis: 1
+  Offset: -90
 --- !u!64 &4175608209859708044
 MeshCollider:
   m_ObjectHideFlags: 0
