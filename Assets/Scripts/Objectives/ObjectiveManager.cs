@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectiveManager : MonoBehaviour
 {
-    [SerializeField]private GameObject Objective;
+    [SerializeField]public GameObject Objective;
     [SerializeField]private Transform Player;
     [SerializeField]private Transform[] spawnOptions;
 
@@ -29,8 +29,8 @@ public class ObjectiveManager : MonoBehaviour
     /// </summary>
     private void SpawnObjective()
     {
-        Instantiate(Objective);
         GiveRandomPosition();
+        Instantiate(Objective);
     } 
 
     /// <summary>
