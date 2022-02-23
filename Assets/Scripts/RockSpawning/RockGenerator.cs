@@ -1,8 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using UnityUtils;
 
+[RequireComponent(typeof(ObjectPool))]
 public class RockGenerator : MonoBehaviour
 {
+    public ObjectPool Pool;
+
     [Header("Rocks")]
     [SerializeField]private GameObject rockprefab;
     [Header("Area where the rocks will spawn")]
@@ -13,29 +17,38 @@ public class RockGenerator : MonoBehaviour
     [SerializeField]private float spawnTime = 10f;
 
     private Vector3 randomPos;
+    private float m_timer;
 
-    private void Awake()
+    private void Start()
     {
-        SpawnRocks(rockprefab);
-        StartCoroutine("SpawnObjects");
+        SpawnRocks();
+    }
+
+    private void Update()
+    {
+        if (m_timer >= spawnTime)
+        {
+            SpawnRocks();
+            m_timer = 0;
+        }
+        m_timer += Time.deltaTime;
     }
 
     /// <summary>
     /// Instantiate with new rocks
     /// </summary>
     /// <param name="prefab"> the object you want to instantiate</param>
-    private void SpawnRocks(GameObject prefab) 
+    private void SpawnRocks() 
     { 
         for (int i = 0; i < objectAmount; i++)
         {
-           NewRandomPosition();
-           Instantiate(prefab);
-           prefab.transform.position = new Vector3(randomPos.x, randomPos.y , randomPos.z);
+            NewRandomPosition();
+            Pool.PopObject(randomPos, Quaternion.identity);
         }
     }
 
     /// <summary>
-    /// New randomposition for the y and z axis
+    /// New randomposition
     /// </summary>
     private void NewRandomPosition()
     {
@@ -46,13 +59,6 @@ public class RockGenerator : MonoBehaviour
         randomPos = new Vector3(randomX, randomY, randomZ);
     }
     
-    IEnumerator SpawnObjects()
-    {
-        yield return new WaitForSeconds(spawnTime);
-        SpawnRocks(rockprefab);
-        StartCoroutine("SpawnObjects");
-    }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
