@@ -157,7 +157,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9ac1a32d1a83a4f4abcee9d902dd91b9, type: 2}
     - target: {fileID: 919132149155446097, guid: 906f047f2f1832c4587c4703d35425ef, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Ship Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8029106800918022278, guid: 906f047f2f1832c4587c4703d35425ef, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -435,6 +435,7 @@ MonoBehaviour:
   VerboseLogging: 0
   MoveDelta: {x: 0, y: 0}
   LookDelta: {x: 0, y: 0}
+  HeightDelta: 0
 --- !u!114 &9181252019741375743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,6 +481,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 2690c379-f54d-45be-a724-414123833eb4
     m_ActionName: Player/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2055899372396943926}
+        m_TargetAssemblyTypeName: InputHelper, Assembly-CSharp
+        m_MethodName: OnElevate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 81db3b87-d4f5-4799-98a3-043cacc652d1
+    m_ActionName: Player/Elevate[/Keyboard/q,/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: KeyboardMouse
   m_DefaultActionMap: Player
