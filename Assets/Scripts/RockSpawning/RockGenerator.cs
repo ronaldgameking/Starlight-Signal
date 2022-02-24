@@ -7,8 +7,6 @@ public class RockGenerator : MonoBehaviour
 {
     public ObjectPool Pool;
 
-    [Header("Rocks")]
-    [SerializeField]private GameObject rockprefab;
     [Header("Area where the rocks will spawn")]
     [SerializeField] private Vector3 SpawnArea = new Vector3(0, 0, 0);
     [Header("Spawn Data")]
