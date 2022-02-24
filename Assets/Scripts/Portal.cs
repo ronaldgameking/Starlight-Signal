@@ -6,6 +6,6 @@ public class Portal : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-            MenuManager.instance.LoadSceneByName("Game");
+            MenuManager.instance.LoadSceneByName(sceneName);
     }
 }
