@@ -11,17 +11,32 @@ public class ObjectiveManager : MonoBehaviour
     [SerializeField]private float distanceBetweenObjective;
     [SerializeField]private float maxDistance = 10f;
 
+    [SerializeField]private int spawnOrder;
+
+    bool startObjective;
+
     private void Awake()
     {
         SpawnObjective();
+
+        DontDestroyOnLoad(this);
+        Player = GameObject.Find("Player").transform;
+
+        if (Player != null)
+            startObjective = true;
+        else
+            startObjective = false;
     }
 
     private void Update()
     {
-        CheckDistance(Objective.transform , Player);
+        if (Player != null)
+        {
+            CheckDistance(Objective.transform, Player);
 
-        if (distanceBetweenObjective < maxDistance)
-            ReachedTarget();
+            if (distanceBetweenObjective < maxDistance)
+                ReachedTarget();
+        }
     }
 
     /// <summary>
@@ -29,18 +44,18 @@ public class ObjectiveManager : MonoBehaviour
     /// </summary>
     private void SpawnObjective()
     {
-        GiveRandomPosition();
+        GiveNextPosition(spawnOrder);
         Instantiate(Objective);
     } 
 
     /// <summary>
     /// Give it a random position
     /// </summary>
-    private void GiveRandomPosition()
+    private void GiveNextPosition(int orer)
     {
-        int randomSpawnOption = Random.Range(0, spawnOptions.Length);
+        //int randomSpawnOption = Random.Range(0, spawnOptions.Length);
 
-        Vector3 pos = new Vector3(spawnOptions[randomSpawnOption].transform.position.x, spawnOptions[randomSpawnOption].transform.position.y, spawnOptions[randomSpawnOption].transform.position.z);
+        Vector3 pos = new Vector3(spawnOptions[orer].transform.position.x, spawnOptions[orer].transform.position.y, spawnOptions[orer].transform.position.z);
 
         Objective.transform.position = pos;
         // create a few places where the objective can be spawned
@@ -56,6 +71,15 @@ public class ObjectiveManager : MonoBehaviour
     {
         //Change to choosing a random level
         MenuManager.instance.LoadSceneByName("Level_One");
+        Player = GameObject.Find("Player").transform;
+
+        if (spawnOrder == spawnOptions.Length)
+            return;
+
+        spawnOrder = spawnOrder + 1;
+
+        if (Player != null)
+        SpawnObjective();
     }
 
     private void OnDrawGizmos()
