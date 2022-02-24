@@ -20,4 +20,9 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(index);
     }
+
+    public void LoadCurrentScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
