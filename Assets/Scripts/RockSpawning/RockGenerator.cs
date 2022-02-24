@@ -51,7 +51,7 @@ public class RockGenerator : MonoBehaviour
     private void NewRandomPosition()
     {
         float randomX = Random.Range(transform.position.x , SpawnArea.x);
-        float randomY = Random.Range(SpawnArea.z - SpawnArea.z / 4, SpawnArea.z);
+        float randomY = Random.Range(SpawnArea.y - SpawnArea.y / 4, SpawnArea.y);
         float randomZ = Random.Range(transform.position.z , SpawnArea.z);
 
         randomPos = new Vector3(randomX, randomY, randomZ);
