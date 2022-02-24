@@ -926,7 +926,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Pool: {fileID: 0}
-  rockprefab: {fileID: 4080674214976613508, guid: 0c4eaf386266f824589c3104defd27cc, type: 3}
   SpawnArea: {x: 11.53, y: 2.86, z: 9.78}
   objectAmount: 0
   spawnTime: 10

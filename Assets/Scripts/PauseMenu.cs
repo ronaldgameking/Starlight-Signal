@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public InputHelper Helper;
     [SerializeField] GameObject pauseMenu;
 
     bool isPaused;
@@ -15,13 +16,12 @@ public class PauseMenu : MonoBehaviour
         {
             if (isPaused)
             {
+                
                 Resume();
-                isPaused = false;
             }
             else
             {
                 Pause();
-                isPaused = true;
             }
         }
     }
@@ -29,13 +29,17 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         pauseMenu.SetActive(true);
+        Helper.ShowCursor();
         Time.timeScale = 0f;
+        isPaused = true;
     }
 
     public void Resume()
     {
         pauseMenu.SetActive(false);
+        Helper.HideCursor();
         Time.timeScale = 1f;
+        isPaused = false;
     }
 
     public void Home(int SampleScene)
