@@ -5227,7 +5227,7 @@ PrefabInstance:
     - target: {fileID: 1421768196255560233, guid: 0507f981faade2b4e8db17b5f17209e2, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 180421511}
+      objectReference: {fileID: 0}
     - target: {fileID: 1421768196255560233, guid: 0507f981faade2b4e8db17b5f17209e2, type: 3}
       propertyPath: maxDistance
       value: 15.23
@@ -12068,10 +12068,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 476333260, guid: 970905a8ffea1184fa5def667b8c0a81, type: 3}
-      propertyPath: Speed
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 1269388971730776989, guid: 970905a8ffea1184fa5def667b8c0a81, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -12118,11 +12114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1933757450243008807, guid: 970905a8ffea1184fa5def667b8c0a81, type: 3}
       propertyPath: m_Name
-      value: Ship Variant (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8976228820954409608, guid: 970905a8ffea1184fa5def667b8c0a81, type: 3}
-      propertyPath: Loop
-      value: 1
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 970905a8ffea1184fa5def667b8c0a81, type: 3}
