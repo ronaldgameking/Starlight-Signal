@@ -30,7 +30,9 @@ public class ThirdPersonPlayer : MonoBehaviour
     private float turnVelocity;
     private Vector3 input;
 
+    //Self documenting code
     private bool IsInputOverthreshold { get => input.magnitude >= InputThreshold; }
+    private bool WantsToElevate { get => Helper.HeightDelta != 0; }
 
     private void Start()
     {
@@ -55,11 +57,13 @@ public class ThirdPersonPlayer : MonoBehaviour
 #endif
         Vector3 moveDir = Vector3.zero;
 
+        //Check if Input is over the set threshold
         if (IsInputOverthreshold)
         {
             float targetAngle = Mathf.Atan2(input.x, input.z) * Mathf.Rad2Deg + mainCam.transform.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnVelocity, TurnTime);
 
+            //Should we apply an offset
             if (!OverrideRotationOffset)
             {
                 transform.rotation = Quaternion.Euler(0f, angle, 0f);
@@ -85,6 +89,11 @@ public class ThirdPersonPlayer : MonoBehaviour
             }
 
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+
+        }
+        if (WantsToElevate)
+        {
+            moveDir.y = Helper.HeightDelta;
         }
         
         rb.velocity = moveDir.normalized * Time.fixedDeltaTime * Speed;
