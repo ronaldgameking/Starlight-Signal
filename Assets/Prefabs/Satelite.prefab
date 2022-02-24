@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6514600118075209114}
   - component: {fileID: 3967573119996745512}
   - component: {fileID: 2350553259886431495}
+  - component: {fileID: 778114685576257800}
   m_Layer: 0
   m_Name: Satelite
   m_TagString: Untagged
@@ -60,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1588171352308661890, guid: aa5ff980540fad44cbeb1f1e55ed78e4, type: 3}
+  - {fileID: 2100000, guid: 60708123ba24c53488fa975549c14295, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,3 +96,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4343238, y: 4.1755953, z: 2.4438806}
   m_Center: {x: 0.00000017881393, y: 2.0474896, z: 0.56520003}
+--- !u!114 &778114685576257800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2962624168984356529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bcfe24b72c225f4e81102b69e3a3921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateVector: {x: 0, y: 5, z: 0}
